@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+  pracyamlnet:
+    image: pracyamlnet
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - type: volume
+        source: /home/kishan/vsdbg
+        target: /vsdbg
+        volume:
+          nocopy: true
+      - /opt/data:/var/lib/mysql
+  redis:
+    image: redis:latest
+    deploy:
+      replicas: 1

@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  pracyamlnet:
+    image: pracyamlnet
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
